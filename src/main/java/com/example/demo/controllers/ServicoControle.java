@@ -17,8 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.models.Servico;
 import com.example.demo.service.ServicoService;
 
-
-
 @RestController
 @RequestMapping("/api/servico")
 public class ServicoControle {
