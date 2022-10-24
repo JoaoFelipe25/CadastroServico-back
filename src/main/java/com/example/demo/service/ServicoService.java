@@ -1,4 +1,4 @@
-package com.example.demo.payload.response;
+package com.example.demo.service;
 
 import java.util.List;
 
@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.models.Servico;
 import com.example.demo.repositories.ServicoRepository;
-
 
 
 @Service
@@ -29,7 +28,7 @@ public class ServicoService {
     }
 
     public Servico inserir(Servico servico){
-        // return servicoRepository.save(servico);
+
         if(servico.getValorPago()==null || servico.getValorPago()==0 || servico.getDataPagamento()==null){
             servico.setStatus("pendente");
         }else{
