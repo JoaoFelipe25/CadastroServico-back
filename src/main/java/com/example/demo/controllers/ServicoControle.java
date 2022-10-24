@@ -19,50 +19,58 @@ import com.example.demo.service.ServicoService;
 
 @RestController
 @RequestMapping("/api/servico")
+@CrossOrigin(origins = "*")
 public class ServicoControle {
 
     @Autowired
     private ServicoService servicoService;
 
     @GetMapping("/")
-    @CrossOrigin("http://localhost:3000")
+    // @CrossOrigin("http://localhost:3000")
+    @CrossOrigin(origins = "*")
     public List<Servico>buscarTodos(){
         return servicoService.buscarTodos();
     }
 
     @GetMapping("/pagamentoPendente")
-    @CrossOrigin("http://localhost:3000")
+    // @CrossOrigin("http://localhost:3000")
+    @CrossOrigin(origins = "*")
     public List<Servico> buscarServicosPagamentoPendente(){
         return servicoService.buscarServicosPagamentoPendente();
     }
 
     @GetMapping("/cancelado")
-    @CrossOrigin("http://localhost:3000")
+    // @CrossOrigin("http://localhost:3000")
+    @CrossOrigin(origins = "*")
     public List<Servico>buscarServicosCancelados(){
         return servicoService.buscarServicosCancelados();
     }
 
     @PostMapping("/")
-    @CrossOrigin("http://localhost:3000")
+    // @CrossOrigin("http://localhost:3000")
+    @CrossOrigin(origins = "*")
     public Servico inserir(@RequestBody Servico servico){
         return servicoService.inserir(servico);
     }
 
     @PostMapping("/{id}")
-    @CrossOrigin("http://localhost:3000")
+    // @CrossOrigin("http://localhost:3000")
+    @CrossOrigin(origins = "*")
     public ResponseEntity<Void> cancelar(@PathVariable("id") long id){
         servicoService.cancelarServico(id);
         return ResponseEntity.ok().build();
     }
 
     @PutMapping("/")
-    @CrossOrigin("http://localhost:3000")
+    // @CrossOrigin("http://localhost:3000")
+    @CrossOrigin(origins = "*")
     public Servico alterar(@RequestBody Servico servico){
         return servicoService.alterar(servico);
     }
 
     @DeleteMapping("/{id}")
-    @CrossOrigin("http://localhost:3000")
+    // @CrossOrigin("http://localhost:3000")
+    @CrossOrigin(origins = "*")
     public ResponseEntity<Void> excluir(@PathVariable("id") Long id){
         servicoService.excluir(id);
         return ResponseEntity.ok().build(); 
